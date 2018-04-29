@@ -1,0 +1,230 @@
+:root {
+  --white: #fff;
+  --light-grey: #F9F9F9;
+  --grey: #EBEBEB;
+  --red: #EB4B2D;
+  --yellow: #FFBE28;
+  --blue: #41BEEB;
+}
+
+#header {
+  background-image: url("../img/hero.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  height: 80vh;
+}
+
+a {
+  color: var(--white);
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.download {
+  border: 2px var(--white) solid;
+  padding: 0.625rem;
+  margin-top: 2.125rem !important;
+}
+
+.headline {
+  text-align: center;
+  width: 50%;
+  margin: 12rem auto;
+  color: var(--white);
+}
+
+.headline h1 {
+  margin-bottom: 0;
+}
+
+#brands ul {
+  background-color: var(--white);
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  margin: 0;
+}
+
+#brands ul li {
+  justify-self: center;
+  list-style: none;
+  padding: 1.375rem 0;
+}
+
+#features {
+  background-color: var(--light-grey);
+  text-align: center;
+  height: 500px;
+  position: relative;
+  display: grid;
+  align-items: center;
+}
+
+#features:after {
+  content: "";
+  position: absolute;
+  background-color: inherit;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  transform: skewY(-13deg);
+  transform-origin: 100%;
+  z-index: -1;
+}
+
+#features .cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  justify-content: center;
+  grid-gap: 2.5rem;
+}
+
+#features .feature-card {
+  background-color: var(--white);
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  box-shadow: 0 8px 10px rgba(0,0,0,0.4);
+}
+
+#features .feature-card p {
+  margin: 0 1rem 1rem;
+}
+
+#features .feature-card img {
+  margin-top: 1rem;
+}
+
+#features .feature-card.book {
+  border-top: var(--red) 3px solid;
+}
+
+#features .feature-card.phone {
+  border-top: var(--yellow) 3px solid;
+}
+
+#features .feature-card.card {
+  border-top: var(--blue) 3px solid;
+}
+
+#discount {
+  margin-top: 10rem;
+}
+
+.discountLayout {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.offer {
+  max-width: 50%;
+  margin: 0 auto;
+}
+
+.offer .button {
+  background: rgb(235,75,45);
+  background: linear-gradient(145deg, rgba(235,75,45,1) 0%, rgba(255,190,40,1) 100%);
+  margin-top: 1.875rem;
+}
+
+#download {
+  background-image: url("../img/download-bg.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: var(--white);
+  text-align: center;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  height: 600px;
+  margin-top: 3rem;
+}
+
+#download h2 {
+  margin: 0;
+  text-transform: uppercase;
+}
+
+#download p {
+  padding-bottom: 2.5rem;
+  max-width: 50%;
+  margin: 0 auto;
+}
+
+#download .button {
+  text-transform: capitalize;
+  background-color: var(--grey);
+  color: black;
+  margin: 0 1rem;
+  position: relative;
+  width: 12rem;
+}
+
+.apple:before,
+.google:before {
+  position: absolute;
+  left: 18%;
+  top: 50%;
+  transform: translate3d(0,-50%,0);
+}
+.apple:before { content: url("../img/apple-icon.png"); }
+.google:before { content: url("../img/play-icon.png"); }
+
+#footer {
+  background-color: var(--light-grey);
+  min-height: 16.25rem;
+  display: grid;
+  position: relative;
+}
+
+#footer h6 {
+  margin-bottom: 1rem;;
+  justify-self: center;
+  align-self: end;
+}
+
+#footer ul {
+  align-self: start;
+  justify-self: center;
+}
+
+#footer li {
+  list-style: none;
+  display: inline-block;
+}
+
+#footer li a {
+  color: black;
+  margin: 0 1rem;
+  font-weight: 400;
+  text-transform: capitalize;
+}
+
+@media screen and (max-width: 768px) {
+  #features:after {
+    transform: skewY(0deg);
+  }
+  #discount {
+    margin-top: 3rem;;
+  }
+  .discountLayout {
+    display: grid;
+    grid-template-areas:
+      "text"
+      "image";
+  }
+
+  .discountLayout img {
+    grid-area: image;
+    justify-self: center;
+  }
+  .offer {
+    grid-area: text;
+    text-align: center;
+    margin-bottom: 5rem;
+  }
+  #footer {
+      height: 10rem;
+  }
+}
